@@ -1,0 +1,21 @@
+asgiref==3.2.3
+certifi==2019.11.28
+chardet==3.0.4
+Django==3.0.3
+django-embed-video==1.3.1
+django-extensions==2.2.8
+django-polymorphic==2.1.2
+-e git+git@git.rtts.eu:django-simplecms@a217b1891af257e0dd01ed139fd3bb288605144c#egg=django_simplecms
+easy-thumbnails==2.7
+idna==2.8
+libsass==0.19.4
+Markdown==3.2.1
+Pillow==7.0.0
+pkg-resources==0.0.0
+psycopg2==2.8.4
+pytz==2019.3
+requests==2.22.0
+six==1.14.0
+sqlparse==0.3.0
+swapper==1.1.2.post1
+urllib3==1.25.8
