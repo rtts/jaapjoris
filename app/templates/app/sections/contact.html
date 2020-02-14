@@ -1,9 +1,7 @@
-{% load i18n %}
-
 <section class="{{section.type}} color{{section.color}}">
   <div class="wrapper">
     <div class="title">
-      <h1>{{section.title}}</h1>
+      <h2>{{section.title}}</h2>
     </div>
 
     <div class="form">
@@ -12,10 +10,8 @@
         {% for field in form %}
           {% include 'cms/formfield.html' with field=field %}
         {% endfor %}
-        <button class="button" name="section" value="{{section.pk}}">{% trans 'Send' %}</button>
+        <button class="button" name="section" value="{{section.pk}}">Verstuur</button>
       </form>
     </div>
-
-    {% include 'cms/editlink.html' %}
   </div>
 </section>

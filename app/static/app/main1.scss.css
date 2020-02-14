@@ -1,15 +1,42 @@
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: url("Merriweather_300.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: url("Merriweather_700.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 300;
+  src: url("Merriweather_300italic.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Light"), url("Open_Sans_300.woff2") format("woff2"); }
+
 body {
-  font-family: sans-serif; }
+  font-family: Merriweather, serif;
+  line-height: 2; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: .5em 0;
-  font-family: sans-serif; }
+  font-family: Open Sans, sans-serif;
+  font-weight: 300;
+  line-height: 1.25; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2.5em; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 2.1em; }
 
 h3 {
   font-size: 1.25em; }
@@ -17,20 +44,37 @@ h3 {
 h4, h5, h6 {
   font-size: 1em; }
 
-header h1 {
-  text-align: center; }
+div.edit {
+  text-align: left; }
 
-header img {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin: auto; }
+div.wrapper {
+  padding: 0 1em; }
+
+header, nav, section, footer {
+  padding: 0; }
+
+header {
+  margin-top: 2.5em; }
+  header h1 a:hover {
+    text-decoration: none; }
+  header img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: auto; }
+
+nav {
+  display: none; }
 
 section {
   border-bottom: none; }
+  section div.title {
+    text-align: left; }
+
+section.imagesection {
+  margin-top: 2em; }
 
 footer {
-  margin-top: 4em;
-  min-height: 400px; }
+  margin-top: 4em; }
 
 /*# sourceMappingURL=main1.scss.css.map */

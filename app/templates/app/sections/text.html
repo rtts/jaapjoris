@@ -5,9 +5,9 @@
   <div class="wrapper">
     {% if section.title %}
       <div class="title">
-        <h1>
+        <h2>
           {{section.title}}
-        </h1>
+        </h2>
       </div>
     {% endif %}
 
@@ -16,7 +16,5 @@
         {% eval section.content %}
       </div>
     {% endif %}
-
-    {% include 'cms/editlink.html' %}
   </div>
 </section>
