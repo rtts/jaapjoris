@@ -5,7 +5,6 @@ Django==3.0.3
 django-embed-video==1.3.1
 django-extensions==2.2.8
 django-polymorphic==2.1.2
--e git+git@git.rtts.eu:django-simplecms@a217b1891af257e0dd01ed139fd3bb288605144c#egg=django_simplecms
 easy-thumbnails==2.7
 idna==2.8
 libsass==0.19.4
@@ -19,3 +18,4 @@ six==1.14.0
 sqlparse==0.3.0
 swapper==1.1.2.post1
 urllib3==1.25.8
+git+https://github.com/rtts/django-simplecms.git
