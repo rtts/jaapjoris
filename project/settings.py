@@ -24,6 +24,7 @@ MEDIA_ROOT = '/srv/' + PROJECT_NAME + '/media'
 LOGIN_REDIRECT_URL = '/'
 CMS_SECTION_MODEL = 'app.Section'
 MARKDOWN_EXTENSIONS = ['extra', 'smarty']
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 def read(file):
     with open(file) as f:
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     'embed_video',
     'easy_thumbnails',
     'django_extensions',
+    'django.forms',
 ]
 
 MIDDLEWARE = [
