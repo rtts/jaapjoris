@@ -17,10 +17,6 @@ class TextView(SectionView):
         context['age'] = now.year - then.year - ((now.month, now.day) < (then.month, then.day))
         return context
 
-@register_view(ButtonSection)
-class ButtonView(SectionView):
-    template_name = 'app/sections/button.html'
-
 @register_view(ImageSection)
 class ImageView(SectionView):
     template_name = 'app/sections/image.html'
@@ -28,6 +24,10 @@ class ImageView(SectionView):
 @register_view(VideoSection)
 class VideoView(SectionView):
     template_name = 'app/sections/video.html'
+
+@register_view(ButtonSection)
+class ButtonView(SectionView):
+    template_name = 'app/sections/button.html'
 
 @register_view(ContactSection)
 class ContactFormView(SectionFormView):

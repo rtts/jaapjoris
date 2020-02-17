@@ -22,12 +22,6 @@ class TextSection(Section):
     class Meta:
         proxy = True
 
-@register_model('Button')
-class ButtonSection(Section):
-    fields = ['button_text', 'button_link']
-    class Meta:
-        proxy = True
-
 @register_model('Afbeelding')
 class ImageSection(Section):
     fields = ['title', 'image']
@@ -37,6 +31,12 @@ class ImageSection(Section):
 @register_model('Video')
 class VideoSection(Section):
     fields = ['title', 'video']
+    class Meta:
+        proxy = True
+
+@register_model('Button')
+class ButtonSection(Section):
+    fields = ['button_text', 'button_link']
     class Meta:
         proxy = True
 

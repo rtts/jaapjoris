@@ -23,15 +23,15 @@ $medium: 800px;
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), url('Open_Sans_300.woff2') format('woff2');
+  src: url('Raleway.woff2') format('woff2');
 }
 
 
 $font: Merriweather, serif;
-$titlefont: Open Sans, sans-serif;
+$titlefont: Raleway, sans-serif;
 
 body {
   font-family: $font;
@@ -59,6 +59,12 @@ a.button {
   }
 }
 
+blockquote {
+  margin: 0;
+  padding-left: 20px;
+  border-left: 10px solid #ccc;
+}
+
 div.edit {
   text-align: left;
 }
@@ -73,6 +79,7 @@ header, nav, section, footer {
 
 header {
   margin-top: 2.5em;
+  margin-bottom: 2.5em;
   h1 {
     a:hover {
       text-decoration: none;
@@ -95,10 +102,7 @@ section {
     text-align: left;
   }
   border-bottom: none;
-}
-
-section.imagesection {
-  margin-top: 2em;
+  margin-bottom: 2.5em;
 }
 
 footer {
