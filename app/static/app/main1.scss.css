@@ -78,6 +78,9 @@ section {
   section div.title {
     text-align: left; }
 
+section.button div.button {
+  text-align: left; }
+
 footer {
   margin-top: 4em; }
 
