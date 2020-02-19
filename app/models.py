@@ -36,7 +36,7 @@ class VideoSection(Section):
 
 @register_model('Button')
 class ButtonSection(Section):
-    fields = ['button_text', 'button_link']
+    fields = ['title', 'button_link']
     class Meta:
         proxy = True
 
