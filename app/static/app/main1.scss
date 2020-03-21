@@ -1,12 +1,61 @@
 $small: 500px;
 $medium: 800px;
+$color1: #3573a8;
+
+a {
+  color: $color1;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a.button, button.button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5em;
+  line-height: 1.25;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  padding: 5px 20px;
+  background: $color1;
+  color: white;
+  box-sizing: border-box;
+  &:hover {
+    color: $color1;
+    background: white;
+    box-shadow: inset 0 0 0 2px $color1;
+  }
+}
 
 div.edit {
-  text-align: left;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  z-index: 1000;
+
+  button {
+    padding: 0;
+    outline: none;
+    background: none;
+    border: none;
+  }
+  img {
+    width: 75px;
+    height: auto;
+  }
 }
 
 div.wrapper {
-  padding: 0 1em;
+  box-sizing: border-box;
+  max-width: 700px;
+  margin: auto;
+  padding: 0 1rem;
+}
+div.spacer {
+  height: 1rem;
 }
 
 header, nav, section, footer {
@@ -34,17 +83,40 @@ nav {
 }
 
 section {
+  border-bottom: none;
+  margin-bottom: 2.5em;
+
   div.title {
     text-align: left;
   }
-  border-bottom: none;
-  margin-bottom: 2.5em;
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 section.button div.button {
   text-align: left;
 }
 
+section.contact {
+  div.message {
+    display: none;
+  }
+  div.formfield {
+    padding: 0.5em 0;
+  }
+  form input, form textarea {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+  }
+}
+
 footer {
-  margin-top: 4em;
+  min-height: 10em;
 }
