@@ -24,9 +24,6 @@ STATIC_ROOT = '/srv/' + PROJECT_NAME + '/static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/srv/' + PROJECT_NAME + '/media'
 LOGIN_REDIRECT_URL = '/'
-CMS_SECTION_MODEL = 'app.Section'
-MARKDOWN_EXTENSIONS = ['extra', 'smarty']
-FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 def read(file):
     with open(file) as f:
@@ -39,11 +36,6 @@ try:
 except IOError:
     SECRET_KEY = ''.join(random.choice(string.printable) for x in range(50))
     write(KEYFILE, SECRET_KEY)
-
-SECTION_COLORS = [
-    (1, 'Licht'),
-    (2, 'Donker'),
-]
 
 INSTALLED_APPS = [
     'app',

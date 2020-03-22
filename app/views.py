@@ -1,10 +1,13 @@
-import cms
 from datetime import date
 from django.utils import timezone
+
+from cms.views import SectionView, SectionFormView
+from cms.decorators import section_view
 from cms.forms import ContactForm
 
-@cms.register('Tekst')
-class TextSection(cms.SectionView):
+@section_view
+class TextSection(SectionView):
+    verbose_name = 'Tekst'
     fields = ['content']
     template_name = 'app/sections/text.html'
 
@@ -15,14 +18,16 @@ class TextSection(cms.SectionView):
         context['age'] = now.year - then.year - ((now.month, now.day) < (then.month, then.day))
         return context
 
-@cms.register('Afbeelding')
-class ImageSection(cms.SectionView):
+@section_view
+class ImageSection(SectionView):
+    verbose_name = 'Afbeelding'
     fields = ['image']
     template_name = 'app/sections/image.html'
 
-@cms.register('Contact')
-class ContactSection(cms.SectionFormView):
-    fields = ['title']
+@section_view
+class ContactSection(SectionFormView):
+    verbose_name = 'Contact'
+    fields = []
     form_class = ContactForm
     success_url = '/thanks/'
     template_name = 'app/sections/contact.html'
