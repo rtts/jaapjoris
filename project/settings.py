@@ -1,11 +1,6 @@
-import os, random, string
-try:
-    import uwsgi
-    DEBUG = False
-except ImportError:
-    DEBUG = True
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+import os, sys, random, string
 
+DEBUG = 'runserver' in sys.argv
 PROJECT_NAME = 'jaapjoris'
 KEYFILE = f'/tmp/{PROJECT_NAME}.secret'
 ADMINS = [('JJ Vens', 'jj@rtts.eu')]
@@ -24,6 +19,10 @@ STATIC_ROOT = '/srv/' + PROJECT_NAME + '/static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/srv/' + PROJECT_NAME + '/media'
 LOGIN_REDIRECT_URL = '/'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    CACHE_MIDDLEWARE_SECONDS = 0
 
 def read(file):
     with open(file) as f:
@@ -100,5 +99,3 @@ CACHES = {
         'KEY_PREFIX': PROJECT_NAME,
     }
 }
-if DEBUG:
-    CACHE_MIDDLEWARE_SECONDS = 0
