@@ -4,7 +4,6 @@ chardet==3.0.4
 Django==3.0.3
 django-embed-video==1.3.1
 django-extensions==2.2.8
-django-polymorphic==2.1.2
 easy-thumbnails==2.7
 idna==2.8
 libsass==0.19.4
@@ -12,10 +11,12 @@ Markdown==3.2.1
 Pillow==7.0.0
 pkg-resources==0.0.0
 psycopg2==2.8.4
+pylibmc==1.6.1
+pytidylib==0.3.2
 pytz==2019.3
 requests==2.22.0
 six==1.14.0
 sqlparse==0.3.0
-swapper==1.1.2.post1
 urllib3==1.25.8
-git+https://github.com/rtts/django-simplecms.git
+git+https://github.com/rtts/django-simplecms
+git+https://github.com/rtts/django-tidy

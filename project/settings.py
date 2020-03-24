@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'cms',
     'polymorphic',
     'embed_video',
@@ -52,8 +51,12 @@ INSTALLED_APPS = [
     'django_extensions',
     'django.forms',
 ]
+if not DEBUG:
+    INSTALLED_APPS += ['django.contrib.staticfiles']
+
 
 MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
     'cms.middleware.SassMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,6 +65,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    'tidy.middleware.TidyMiddleware',
 ]
 
 TEMPLATES = [
@@ -87,3 +92,13 @@ DATABASES = {
         'NAME': PROJECT_NAME,
     }
 }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+        'LOCATION': '127.0.0.1:11211',
+        'KEY_PREFIX': PROJECT_NAME,
+    }
+}
+if DEBUG:
+    CACHE_MIDDLEWARE_SECONDS = 0

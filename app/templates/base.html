@@ -1,14 +1,29 @@
-{% extends 'cms/base.html' %}
-{% load static %}
-{% block title %}Curriculum Vitae van Jaap Joris Vens{% endblock %}
+{% load static i18n %}
+{% get_current_language as lang%}
 
-{% block extrahead %}
-  <link rel="stylesheet" href="{% static 'app/typography.scss.css' %}">
-  <link rel="stylesheet" href="{% static 'app/main1.scss.css' %}">
-{% endblock %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'main.scss.css' %}">
+    <title>{% block title %}Curriculum Vitae van Jaap Joris Vens{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body>
+    {% block main %}
+      <header>
+        {% block header %}
+          <h1><a href="/">Curriculum Vitae van Jaap&nbsp;Joris&nbsp;Vens</a></h1>
+        {% endblock %}
+      </header>
 
-{% block header %}
-  <div class="wrapper">
-    <h1><a href="/">Curriculum Vitae van Jaap&nbsp;Joris&nbsp;Vens</a></h1>
-  </div>
-{% endblock %}
+      <article>
+        {% block content %}
+        {% endblock %}
+      </article>
+
+    {% endblock %}
+    {% block extrabody %}{% endblock %}
+  </body>
+</html>
