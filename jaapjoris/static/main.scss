@@ -54,16 +54,31 @@ a.button, button.button {
   }
 }
 
-div.edit {
+a.page.edit {
   position: fixed;
   right: 1em;
   bottom: 1em;
   z-index: 1000;
   img {
+    display: block;
     width: 75px;
     height: auto;
   }
 }
+a.section.edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  img {
+    display: block;
+    width: 35px;
+  }
+}
+// Will be supported in the near future! :)
+section:has(> a.edit) {
+  background: #eee;
+}
+
 
 header, section {
   box-sizing: border-box;
@@ -91,6 +106,7 @@ article {
 }
 
 section {
+  position: relative;
   margin-bottom: 2.5em;
 
   div.title {

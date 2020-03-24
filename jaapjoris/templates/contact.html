@@ -1,3 +1,5 @@
+{% load cms %}
+
 <section class="contact">
   <h2>{{section.title}}</h2>
 
@@ -9,4 +11,6 @@
     <div class="spacer"></div>
     <button class="button" name="section" value="{{section.pk}}">Verstuur</button>
   </form>
+
+  {% editsection '<img src="/static/cms/edit.png">' %}
 </section>

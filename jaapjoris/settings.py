@@ -1,14 +1,14 @@
 import os, sys, random, string
 
 DEBUG = 'runserver' in sys.argv
-PROJECT_NAME = 'jaapjoris'
+PROJECT_NAME = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
 KEYFILE = f'/tmp/{PROJECT_NAME}.secret'
 ADMINS = [('JJ Vens', 'jj@rtts.eu')]
 DEFAULT_TO_EMAIL = 'jj@rtts.eu'
 DEFAULT_FROM_EMAIL = 'noreply@rtts.eu'
 ALLOWED_HOSTS = ['*']
-ROOT_URLCONF = 'project.urls'
-WSGI_APPLICATION = 'project.wsgi.application'
+ROOT_URLCONF = PROJECT_NAME + '.urls'
+WSGI_APPLICATION = PROJECT_NAME + '.wsgi.application'
 LANGUAGE_CODE = 'nl'
 TIME_ZONE = 'Europe/Amsterdam'
 USE_I18N = True
@@ -37,7 +37,7 @@ except IOError:
     write(KEYFILE, SECRET_KEY)
 
 INSTALLED_APPS = [
-    'app',
+    PROJECT_NAME,
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

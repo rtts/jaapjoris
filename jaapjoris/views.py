@@ -9,7 +9,7 @@ from cms.forms import ContactForm
 class TextSection(SectionView):
     verbose_name = 'Tekst'
     fields = ['content']
-    template_name = 'app/sections/text.html'
+    template_name = 'text.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -22,7 +22,7 @@ class TextSection(SectionView):
 class ImageSection(SectionView):
     verbose_name = 'Afbeelding'
     fields = ['image']
-    template_name = 'app/sections/image.html'
+    template_name = 'image.html'
 
 @section_view
 class ContactSection(SectionFormView):
@@ -30,4 +30,4 @@ class ContactSection(SectionFormView):
     fields = []
     form_class = ContactForm
     success_url = '/thanks/'
-    template_name = 'app/sections/contact.html'
+    template_name = 'contact.html'
