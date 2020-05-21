@@ -4,7 +4,7 @@ DEBUG = 'runserver' in sys.argv
 PROJECT_NAME = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
 KEYFILE = f'/tmp/{PROJECT_NAME}.secret'
 ADMINS = [('JJ Vens', 'jj@rtts.eu')]
-DEFAULT_TO_EMAIL = 'jj@rtts.eu'
+DEFAULT_TO_EMAIL = ['jj@rtts.eu']
 DEFAULT_FROM_EMAIL = 'noreply@rtts.eu'
 ALLOWED_HOSTS = ['*']
 ROOT_URLCONF = PROJECT_NAME + '.urls'
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'cms',
-    'polymorphic',
     'embed_video',
     'easy_thumbnails',
     'django_extensions',
