@@ -74,8 +74,8 @@ a.section.edit {
     width: 35px;
   }
 }
-// Will be supported in the near future! :)
-section:has(> a.edit) {
+
+section:has(> a.edit):hover {
   background: #eee;
 }
 

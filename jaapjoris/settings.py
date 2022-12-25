@@ -3,9 +3,9 @@ import os, sys, random, string
 DEBUG = 'runserver' in sys.argv
 PROJECT_NAME = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
 KEYFILE = f'/tmp/{PROJECT_NAME}.secret'
-ADMINS = [('JJ Vens', 'jj@rtts.eu')]
-DEFAULT_TO_EMAIL = ['jj@rtts.eu']
+ADMINS = [('Jaap Joris Vens', 'info@jaapjoris.nl')]
 DEFAULT_FROM_EMAIL = 'noreply@rtts.eu'
+CONTACT_FORM_EMAIL_SUBJECT = "Contactformulier jaapjoris.nl"
 ALLOWED_HOSTS = ['*']
 ROOT_URLCONF = PROJECT_NAME + '.urls'
 WSGI_APPLICATION = PROJECT_NAME + '.wsgi.application'

@@ -1,5 +1,6 @@
 from datetime import date
 from django.utils import timezone
+from django.http import HttpResponse
 
 from cms.views import SectionView, SectionFormView
 from cms.decorators import section_view
@@ -27,7 +28,11 @@ class ImageSection(SectionView):
 @section_view
 class ContactSection(SectionFormView):
     verbose_name = 'Contact'
-    fields = []
+    fields = ["content", "href"]
     form_class = ContactForm
-    success_url = '/thanks/'
     template_name = 'contact.html'
+
+    def form_valid(self, form):
+        response = HttpResponse(status=302)
+        response["Location"] = form.save(self.object.href)
+        return response

@@ -1,7 +1,9 @@
 {% load cms %}
 
-<section class="contact">
+<section class="contact" id="{{section.title|slugify}}">
   <h2>{{section.title}}</h2>
+
+  {% eval section.content %}
 
   <form method="post" class="cms">
     {% csrf_token %}

@@ -67,7 +67,7 @@ a.section.edit {
     display: block;
     width: 35px; }
 
-section:has(> a.edit) {
+section:has(> a.edit):hover {
   background: #eee; }
 
 header, section {
