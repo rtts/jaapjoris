@@ -1,38 +1,54 @@
-from datetime import date
-from django.utils import timezone
-from django.http import HttpResponse
+"""
+View classes for all possible section types.
+"""
 
-from cms.views import SectionView, SectionFormView
+from datetime import date
+
 from cms.decorators import section_view
-from cms.forms import ContactForm
+from cms.views import ContactSectionFormView, SectionView
+from django.utils import timezone
+
 
 @section_view
 class TextSection(SectionView):
-    verbose_name = 'Tekst'
-    fields = ['content']
-    template_name = 'text.html'
+    """
+    A section that displays text.
+    """
+
+    verbose_name = "Tekst"
+    fields = ["content"]
+    template_name = "text.html"
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        """
+        Insert age into context.
+        """
+
+        # Calculate my age.
         then = date(1983, 6, 6)
         now = timezone.now()
-        context['age'] = now.year - then.year - ((now.month, now.day) < (then.month, then.day))
-        return context
+        age = now.year - then.year - ((now.month, now.day) < (then.month, then.day))
+
+        return super().get_context_data(age=age, **kwargs)
+
 
 @section_view
 class ImageSection(SectionView):
-    verbose_name = 'Afbeelding'
-    fields = ['image']
-    template_name = 'image.html'
+    """
+    A section that displays an image.
+    """
+
+    verbose_name = "Afbeelding"
+    fields = ["image"]
+    template_name = "image.html"
+
 
 @section_view
-class ContactSection(SectionFormView):
-    verbose_name = 'Contact'
-    fields = ["content", "href"]
-    form_class = ContactForm
-    template_name = 'contact.html'
+class ContactSection(ContactSectionFormView):
+    """
+    A section that displays a contact form.
+    """
 
-    def form_valid(self, form):
-        response = HttpResponse(status=302)
-        response["Location"] = form.save(self.object.href)
-        return response
+    verbose_name = "Contact"
+    fields = ["content", "href", "subject"]
+    template_name = "contact.html"
