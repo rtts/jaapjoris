@@ -1,10 +1,10 @@
 {% load cms %}
 
 <section class="text" id="{{section.title|slugify}}">
-  <h2>
-    {{section.title}}
-  </h2>
-  {% eval section.content %}
+    <h2>
+        {{section.title}}
+    </h2>
+    {% eval section.content %}
 
-  {% editsection '<img src="/static/cms/edit.png">' %}
+    {% editsection '<img src="/static/cms/edit.png">' %}
 </section>

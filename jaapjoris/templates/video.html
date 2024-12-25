@@ -1,13 +1,13 @@
 {% load embed_video_tags %}
 
 <section class="video">
-  <div class="wrapper">
-    {% if section.video %}
-      <div class="video">
-        <div class="iframe">
-          {% video section.video '800x600' %}
-        </div>
-      </div>
-    {% endif %}
-  </div>
+    <div class="wrapper">
+        {% if section.video %}
+            <div class="video">
+                <div class="iframe">
+                    {% video section.video '800x600' %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
 </section>
