@@ -3,6 +3,7 @@ View classes for all possible section types.
 """
 
 from datetime import date
+from typing import Any
 
 from cms.decorators import section_view
 from cms.views import ContactSectionFormView, SectionView
@@ -19,7 +20,7 @@ class TextSection(SectionView):
     fields = ["content"]
     template_name = "text.html"
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         """
         Insert age into context.
         """
